@@ -100,7 +100,8 @@ game it already has.
     tools/release.sh VERSION NOTES.txt [--no-notarize] [--no-windows]
     tools/publish_release.sh VERSION
 
-`release.sh` builds the Mac app (Developer ID signed, notarized and stapled),
+`release.sh` builds the Mac disk image (the app and the image Developer ID
+signed, notarized and stapled),
 the Windows zip, the game-only archives the launcher installs, the
 third-party license notices and the signed manifest in `dist/release/VERSION/`.
 Signing the manifest needs the release key, which is not in this repository;

@@ -14,8 +14,9 @@ out="dist/release/$version"
 "target/dist/release/brinewake-release" verify "$out/latest.json"
 # The release page links the code signing policy.
 body="$out/RELEASE-PAGE.md"
-{ sed 's/^/- /' "$out/NOTES.txt"; printf '\nDownload BRINEWAKE-%s-macos.zip or BRINEWAKE-%s-windows.zip. [Code signing policy](https://github.com/%s/blob/main/docs/CODE-SIGNING.md)\n' "$version" "$version" "$repo"; } > "$body"
+{ sed 's/^/- /' "$out/NOTES.txt"; printf '\nDownload BRINEWAKE-%s-macos.dmg or BRINEWAKE-%s-windows.zip. [Code signing policy](https://github.com/%s/blob/main/docs/CODE-SIGNING.md)\n' "$version" "$version" "$repo"; } > "$body"
 gh release create "v$version" --repo "$repo" --title "BRINEWAKE $version" --notes-file "$body" \
   "$out/latest.json" "$out/latest.json.sig" \
-  "$out"/BRINEWAKE-"$version"-*.zip "$out"/brinewake-game-"$version"-*.zip
+  "$out"/BRINEWAKE-"$version"-macos.dmg "$out"/BRINEWAKE-"$version"-windows.zip \
+  "$out"/brinewake-game-"$version"-*.zip
 echo "Published v$version to https://github.com/$repo/releases/tag/v$version"

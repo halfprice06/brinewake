@@ -1,6 +1,6 @@
 #!/bin/sh
-# Build a BRINEWAKE release: the Mac app (Developer ID signed, notarized and
-# stapled), the Windows zip, the game-only archives the launcher installs,
+# Build a BRINEWAKE release: the Mac disk image (the app, Developer ID signed,
+# notarized and stapled, with an Applications shortcut), the Windows zip, the game-only archives the launcher installs,
 # and the signed manifest. Nothing is published; see tools/publish_release.sh.
 #
 #   tools/release.sh VERSION NOTES_FILE [--no-notarize] [--no-windows]
@@ -14,7 +14,8 @@
 #     (xcrun notarytool store-credentials brinewake-notary);
 #   - the signing key at ~/.config/brinewake/release-signing.key;
 #   - for Windows: rustup target x86_64-pc-windows-gnu and MinGW;
-#   - cargo-about, for the third-party license notices in every download.
+#   - cargo-about, for the third-party license notices in every download;
+#   - uv, which fetches dmgbuild for the Mac disk image.
 #
 # BRINEWAKE_REPO (default halfprice06/brinewake) is the GitHub repository
 # whose releases host the files.
@@ -63,6 +64,7 @@ export RUSTFLAGS="--remap-path-prefix=$HOME=/build --remap-path-prefix=$PWD=."
 
 # The licenses of everything compiled in, for every download.
 command -v cargo-about >/dev/null || { echo "install cargo-about (cargo install cargo-about)" >&2; exit 1; }
+command -v uvx >/dev/null || { echo "install uv (brew install uv), for dmgbuild" >&2; exit 1; }
 notices="$work/THIRD-PARTY-LICENSES.html"
 cargo about generate --workspace tools/package/about.hbs -o "$notices"
 
@@ -130,10 +132,24 @@ if [ "$notarize" = 1 ]; then
 else
   echo "== not notarized: Gatekeeper will ask players to allow it"
 fi
-ditto -c -k --keepParent "$launcher" "$out/BRINEWAKE-$version-macos.zip"
+
+# What players download: a disk image to drag BRINEWAKE out of into
+# Applications, signed and notarized in its turn.
+echo "== disk image"
+dmg="$out/BRINEWAKE-$version-macos.dmg"
+python3 tools/package/dmg_background.py "$work/dmg-background.tiff"
+uvx --from dmgbuild dmgbuild -s tools/package/dmg.py -D app="$launcher" \
+  -D background="$work/dmg-background.tiff" -D icon=tools/package/BRINEWAKE.icns \
+  BRINEWAKE "$dmg"
+codesign --force --timestamp --keychain "$keychain" --sign "$identity" "$dmg"
+if [ "$notarize" = 1 ]; then
+  xcrun notarytool submit "$dmg" --keychain-profile brinewake-notary --wait
+  xcrun stapler staple "$dmg"
+  spctl --assess --type open --context context:primary-signature --verbose "$dmg"
+fi
 "$tool" pack "$game" "$out/brinewake-game-$version-macos-arm64.zip"
 
-platforms="macos-arm64|macOS (Apple Silicon)|$out/brinewake-game-$version-macos-arm64.zip|$out/BRINEWAKE-$version-macos.zip"
+platforms="macos-arm64|macOS (Apple Silicon)|$out/brinewake-game-$version-macos-arm64.zip|$dmg"
 
 if [ "$windows" = 1 ]; then
   echo "== Windows"

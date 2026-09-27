@@ -40,8 +40,8 @@ Windows, and everything here — code, art and music — is MIT licensed.
 Get the newest build from [danprice.ai/brinewake](https://danprice.ai/brinewake)
 or the [releases page](https://github.com/halfprice06/brinewake/releases).
 
-- **macOS** (Apple Silicon, macOS 12 or later): open the zip, drag BRINEWAKE
-  into Applications and open it. The app is signed and notarized.
+- **macOS** (Apple Silicon, macOS 12 or later): open the disk image, drag
+  BRINEWAKE into Applications and open it. The app is signed and notarized.
 - **Windows** (10 or 11, 64-bit, DirectX 12 or Vulkan): unzip the folder
   anywhere and run `BRINEWAKE.exe`. Until the Windows build is code-signed,
   Windows may say it protected your PC: choose More info, then Run anyway.
