@@ -72,3 +72,14 @@ REJOIN. The host can press KEEP SEAT OPEN so the others play on meanwhile.
 If the game will not start at all, it shows a box saying why. It needs a
 graphics card with DirectX 12 or Vulkan (almost any PC from the last ten
 years); updating the graphics driver usually helps.
+
+
+Removing BRINEWAKE
+------------------
+1. Delete the BRINEWAKE folder you unzipped.
+2. Delete %LOCALAPPDATA%\Brinewake, where the game is installed.
+3. To remove your name, settings and saves as well, delete
+   %APPDATA%\Brinewake.
+To open either folder, paste its name into the File Explorer address bar.
+If you allowed BRINEWAKE through Windows Firewall, you can also remove it
+from "Allow an app through Windows Firewall".

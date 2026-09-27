@@ -51,6 +51,12 @@ version, downloads it, verifies its signature and installs it before the game
 opens; without a connection it starts the version you have. Your settings and
 saves carry over.
 
+To uninstall on macOS, delete BRINEWAKE from Applications and the folder
+`~/Library/Application Support/Brinewake` (the installed game, your settings
+and saves). On Windows, delete the folder you unzipped,
+`%LOCALAPPDATA%\Brinewake` (the installed game) and `%APPDATA%\Brinewake`
+(your settings and saves).
+
 Controls, rules and online play are covered in [docs/CONTROLS.md](docs/CONTROLS.md)
 and in `HOW TO PLAY.txt` inside the Windows download.
 
