@@ -263,7 +263,7 @@ checksum = "72f5acc6cb2ba439de613abc23857ec3d78374d8ed5ac84e9d11336e87da8649"
 
 [[package]]
 name = "bw_content"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "blake3",
  "bw_core",
@@ -273,14 +273,14 @@ dependencies = [
 
 [[package]]
 name = "bw_core"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "bw_desktop"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "arboard",
  "bw_content",
@@ -300,7 +300,7 @@ dependencies = [
 
 [[package]]
 name = "bw_launcher"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "blake3",
  "ed25519-dalek",
@@ -314,7 +314,7 @@ dependencies = [
 
 [[package]]
 name = "bw_sim"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "blake3",
  "bw_content",
@@ -326,7 +326,7 @@ dependencies = [
 
 [[package]]
 name = "bw_tools"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "bw_content",
  "bw_core",
