@@ -2585,11 +2585,15 @@ mod tests {
         let mut left_output = vec![0.0f32; 1_024 * 2];
         left_mixer.fill(&mut left_output);
         let left_peak = left_output
-            .chunks_exact(2)
+            .as_chunks::<2>()
+            .0
+            .iter()
             .map(|frame| frame[0].abs())
             .fold(0.0, f32::max);
         let left_right_peak = left_output
-            .chunks_exact(2)
+            .as_chunks::<2>()
+            .0
+            .iter()
             .map(|frame| frame[1].abs())
             .fold(0.0, f32::max);
         assert!(left_peak > left_right_peak);

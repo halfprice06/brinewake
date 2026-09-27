@@ -1727,7 +1727,9 @@ mod tests {
         assert!(drawn > 0);
         let changed = canvas
             .pixels
-            .chunks_exact(4)
+            .as_chunks::<4>()
+            .0
+            .iter()
             .filter(|p| p[..3] != [0, 0, 0])
             .count();
         assert!(changed > 20, "{changed}");

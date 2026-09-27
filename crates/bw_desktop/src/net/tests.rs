@@ -158,7 +158,9 @@ fn a_bad_connection_keeps_the_match_in_step_and_close_to_real_time() {
     let mut guest_lobby =
         Lobby::join(&JoinCode::parse(&addr.to_string()).unwrap(), None, options).unwrap();
     let (mut host, mut guest) = (None, None);
-    let deadline = Instant::now() + Duration::from_secs(15);
+    // Lost packets and a busy machine (the whole suite runs at once) can slow
+    // the handshake; the lobby itself waits two minutes.
+    let deadline = Instant::now() + Duration::from_secs(60);
     while (host.is_none() || guest.is_none()) && Instant::now() < deadline {
         host = host.or_else(|| host_lobby.poll());
         guest = guest.or_else(|| guest_lobby.poll());

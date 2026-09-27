@@ -471,7 +471,7 @@ fn map_png(game: &Game, cell_px: u32) -> Result<Vec<u8>, String> {
         (k / 2).max(1),
     );
     let mut out = Vec::with_capacity((w * h * 3) as usize);
-    for px in canvas.pixels.chunks_exact(4) {
+    for px in canvas.pixels.as_chunks::<4>().0 {
         out.extend_from_slice(&px[..3]);
     }
     let mut png = Vec::new();

@@ -96,7 +96,7 @@ impl Canvas {
     }
 
     pub fn clear(&mut self, c: Color) {
-        for p in self.pixels.chunks_exact_mut(4) {
+        for p in self.pixels.as_chunks_mut::<4>().0 {
             p.copy_from_slice(&c)
         }
     }

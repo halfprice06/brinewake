@@ -2801,7 +2801,7 @@ impl Game {
                 row.copy_from_slice(&line[..dest_stride]);
                 continue;
             }
-            for (pixel, &(sx, wx)) in row.chunks_exact_mut(4).zip(&columns) {
+            for (pixel, &(sx, wx)) in row.as_chunks_mut::<4>().0.iter_mut().zip(&columns) {
                 let from = sx * 4;
                 if wx == 0 {
                     pixel.copy_from_slice(&line[from..from + 4]);

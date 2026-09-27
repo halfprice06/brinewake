@@ -189,7 +189,7 @@ impl Launcher {
             }
             Stage::Checking => {
                 let x = ((t * 90.0) as usize) % (bw + 30);
-                let start = x.saturating_sub(30).max(0);
+                let start = x.saturating_sub(30);
                 rect(c, bx + start, by, x.min(bw) - start.min(x.min(bw)), 3, GOLD);
             }
             _ => {}
