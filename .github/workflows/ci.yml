@@ -23,3 +23,9 @@ jobs:
       - run: cargo fmt --all -- --check
       - run: cargo clippy --workspace --all-targets --release -- -D warnings
       - run: cargo test --workspace --release
+      # Measures delay and lag against the wall clock, so it runs on its own:
+      # beside the rest of the suite a busy machine looks like a slow network.
+      - name: The lossy-network test, alone
+        run: >-
+          cargo test --release -p bw_desktop --bin brinewake --
+          --ignored --exact net::tests::a_bad_connection_keeps_the_match_in_step_and_close_to_real_time

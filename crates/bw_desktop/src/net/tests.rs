@@ -140,6 +140,7 @@ fn two_peers_stay_in_lockstep_with_commands_from_both_seats() {
 }
 
 #[test]
+#[ignore = "wall-clock timing: run it alone, as CI does (docs/DEVELOPMENT.md)"]
 fn a_bad_connection_keeps_the_match_in_step_and_close_to_real_time() {
     // 60 ms each way, up to 25 ms more, one packet in ten lost, both ways.
     let bad = Conditions {

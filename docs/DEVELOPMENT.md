@@ -58,6 +58,13 @@ for the match it launches.
     cargo build --release --workspace
     ./tools/package_macos.sh
 
+Tests that time against the wall clock are ignored in the full suite, where
+the other tests slow them down. Run them alone; CI runs the lossy-network one
+this way on every push:
+
+    cargo test --release -p bw_desktop --bin brinewake -- --ignored --exact net::tests::a_bad_connection_keeps_the_match_in_step_and_close_to_real_time
+    cargo test --release -p bw_desktop --bin brinewake -- --ignored --exact audio::tests::mixer_is_fast_enough_for_the_output_callback
+
     target/release/brinewake --ux-review output/ux-review
     target/release/brinewake --qol-review output/qol-v1/journeys
     target/release/brinewake --data-dir output/test-profile
