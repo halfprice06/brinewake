@@ -1,0 +1,34 @@
+# Build output
+/target/
+/target-*/
+/dist/
+
+# Local runs: captures, saves, preferences
+/output/
+/saves/
+/ui/
+
+# Local-only notes and tooling (not part of the public tree)
+/.claude/
+/AGENTS.md
+/STATUS.md
+/design/
+/private/
+
+# OS and editor
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Stray backups and logs
+*.bak
+*.log
+
+# Keys never belong in the repository
+*.key
+*.pem
+.env
+.env.*

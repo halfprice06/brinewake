@@ -1,0 +1,53 @@
+# The Windows release binaries, built from a tag by CI so that they can be
+# code-signed (SignPath Foundation signs only binaries built by CI from this
+# public repository): the launcher, BRINEWAKE.exe, and the game,
+# brinewake.exe. tools/release.sh packs them with the Mac build and signs the
+# update manifest on the maintainer's machine; the ed25519 release key never
+# enters CI.
+name: Windows release build
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: MinGW and the Windows target
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends gcc-mingw-w64-x86-64-win32
+          rustup target add x86_64-pc-windows-gnu
+      - uses: Swatinem/rust-cache@v2
+      - name: Build the launcher and the game
+        env:
+          CARGO_PROFILE_RELEASE_DEBUG: "0"
+          CARGO_PROFILE_RELEASE_STRIP: "true"
+        run: |
+          cargo build --release --target x86_64-pc-windows-gnu \
+            -p bw_desktop --bin brinewake -p bw_launcher --bin brinewake-launcher
+          mkdir -p windows-unsigned
+          cp target/x86_64-pc-windows-gnu/release/brinewake-launcher.exe windows-unsigned/BRINEWAKE.exe
+          cp target/x86_64-pc-windows-gnu/release/brinewake.exe windows-unsigned/brinewake.exe
+      - uses: actions/upload-artifact@v4
+        id: unsigned
+        with:
+          name: windows-unsigned
+          path: windows-unsigned/
+      # Once SignPath Foundation has accepted the project, sign the artifact:
+      # - uses: signpath/github-action-submit-signing-request@v1
+      #   with:
+      #     api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+      #     organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+      #     project-slug: brinewake
+      #     signing-policy-slug: release-signing
+      #     github-artifact-id: ${{ steps.unsigned.outputs.artifact-id }}
+      #     wait-for-completion: true
+      #     output-artifact-directory: windows-signed
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: windows-signed
+      #     path: windows-signed/

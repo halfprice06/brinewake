@@ -1,0 +1,718 @@
+{
+ "height": 288,
+ "sprites": {
+  "tip_crew": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 0,
+   "y": 0
+  },
+  "tip_damage": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 24,
+   "y": 0
+  },
+  "tip_hull": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 48,
+   "y": 0
+  },
+  "tip_pressure": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 72,
+   "y": 0
+  },
+  "tip_reach": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 96,
+   "y": 0
+  },
+  "tip_salvage": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 120,
+   "y": 0
+  },
+  "tip_sight": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 144,
+   "y": 0
+  },
+  "tip_speed": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 168,
+   "y": 0
+  },
+  "tip_time": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 8,
+   "w": 8,
+   "x": 0,
+   "y": 24
+  },
+  "ui_build_assembly_drydock": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 24
+  },
+  "ui_build_assembly_hq": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 24
+  },
+  "ui_build_assembly_palisade": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 24
+  },
+  "ui_build_assembly_works": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 24
+  },
+  "ui_build_compact_dropoff": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 24
+  },
+  "ui_build_compact_drydock": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 24
+  },
+  "ui_build_compact_hq": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 24
+  },
+  "ui_build_compact_palisade": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 48
+  },
+  "ui_build_compact_tower": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 48
+  },
+  "ui_build_compact_works": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 48
+  },
+  "ui_build_condenser": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 48
+  },
+  "ui_build_dropoff": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 48
+  },
+  "ui_build_tower": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 48
+  },
+  "ui_build_union_drydock": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 48
+  },
+  "ui_build_union_hq": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 48
+  },
+  "ui_build_union_palisade": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 72
+  },
+  "ui_build_union_works": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 72
+  },
+  "ui_cmd_army": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 72
+  },
+  "ui_cmd_attack": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 72
+  },
+  "ui_cmd_board": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 72
+  },
+  "ui_cmd_cancel": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 72
+  },
+  "ui_cmd_capture": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 72
+  },
+  "ui_cmd_deploy": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 72
+  },
+  "ui_cmd_dry_e": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 96
+  },
+  "ui_cmd_dry_s": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 96
+  },
+  "ui_cmd_dry_w": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 96
+  },
+  "ui_cmd_face": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 96
+  },
+  "ui_cmd_flood": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 96
+  },
+  "ui_cmd_formation_compact": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 96
+  },
+  "ui_cmd_formation_line": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 96
+  },
+  "ui_cmd_formation_loose": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 96
+  },
+  "ui_cmd_gather": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 120
+  },
+  "ui_cmd_glint": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 120
+  },
+  "ui_cmd_hold": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 120
+  },
+  "ui_cmd_keep": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 120
+  },
+  "ui_cmd_lay": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 120
+  },
+  "ui_cmd_pack": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 120
+  },
+  "ui_cmd_reclaim": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 120
+  },
+  "ui_cmd_sound": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 120
+  },
+  "ui_cmd_stop": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 144
+  },
+  "ui_cmd_surge": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 144
+  },
+  "ui_cmd_unload": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 144
+  },
+  "ui_cmd_vent": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 144
+  },
+  "ui_doc_fire_control": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 144
+  },
+  "ui_doc_hauling": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 144
+  },
+  "ui_unit_barge": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 144
+  },
+  "ui_unit_brander": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 144
+  },
+  "ui_unit_bulwark": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 168
+  },
+  "ui_unit_caisson": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 168
+  },
+  "ui_unit_caulker": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 168
+  },
+  "ui_unit_dredger": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 168
+  },
+  "ui_unit_glazier": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 168
+  },
+  "ui_unit_glinter": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 168
+  },
+  "ui_unit_heliostat": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 168
+  },
+  "ui_unit_hook": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 168
+  },
+  "ui_unit_lampwright": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 192
+  },
+  "ui_unit_lifter": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 192
+  },
+  "ui_unit_loom": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 192
+  },
+  "ui_unit_pan": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 192
+  },
+  "ui_unit_raker": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 192
+  },
+  "ui_unit_reedguard": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 192
+  },
+  "ui_unit_riveter": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 192
+  },
+  "ui_unit_salter": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 192
+  },
+  "ui_unit_skipper": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 216
+  },
+  "ui_unit_sounder": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 216
+  },
+  "ui_unit_stilt": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 216
+  },
+  "ui_unit_tender": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 216
+  },
+  "ui_unit_tidewatch": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 216
+  },
+  "ui_unit_wick": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 216
+  },
+  "ui_up_bleed_valves": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 216
+  },
+  "ui_up_cranes": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 216
+  },
+  "ui_up_overhaul": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 240
+  },
+  "ui_up_overpressure": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 24,
+   "y": 240
+  },
+  "ui_up_plate": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 48,
+   "y": 240
+  },
+  "ui_up_refit": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 72,
+   "y": 240
+  },
+  "ui_up_salvage_sonar": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 96,
+   "y": 240
+  },
+  "ui_up_scrap_recovery": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 120,
+   "y": 240
+  },
+  "ui_up_siege": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 144,
+   "y": 240
+  },
+  "ui_up_temper": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 168,
+   "y": 240
+  },
+  "ui_up_tracks": {
+   "anchor_x": 0,
+   "anchor_y": 0,
+   "h": 24,
+   "w": 24,
+   "x": 0,
+   "y": 264
+  }
+ },
+ "width": 192
+}

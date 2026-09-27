@@ -1,0 +1,1141 @@
+[
+ {
+  "name": "a_flat",
+  "seed": 7,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "start": 900,
+  "frames": 110,
+  "zoom": [
+   2.2,
+   2.7
+  ],
+  "camera": {
+   "type": "pan",
+   "from": {
+    "cell": [
+     38,
+     40
+    ]
+   },
+   "to": {
+    "cell": [
+     60,
+     54
+    ]
+   }
+  }
+ },
+ {
+  "name": "a_workers",
+  "seed": 7,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "start": 150,
+  "frames": 150,
+  "zoom": [
+   3.0,
+   2.5
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "hq": 0
+   }
+  },
+  "offset": [
+   -120,
+   40
+  ]
+ },
+ {
+  "name": "b_build",
+  "seed": 7,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "start": 2280,
+  "frames": 90,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "hq": 0
+   }
+  },
+  "offset": [
+   -260,
+   -60
+  ]
+ },
+ {
+  "name": "b_salvage",
+  "seed": 7,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "start": 2600,
+  "frames": 90,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "hq": 1
+   }
+  },
+  "offset": [
+   200,
+   0
+  ]
+ },
+ {
+  "name": "b_train",
+  "seed": 7,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "start": 4650,
+  "frames": 90,
+  "zoom": [
+   2.5,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "hq": 0
+   }
+  },
+  "offset": [
+   -200,
+   0
+  ]
+ },
+ {
+  "name": "b_march",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 430,
+  "frames": 100,
+  "zoom": [
+   2.6,
+   2.6
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "army": 0
+   }
+  },
+  "ease": 0.12,
+  "tides": [
+   {
+    "tick": 40,
+    "seat": 0,
+    "tide": "north"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ],
+     [
+      "Bulwark",
+      2
+     ]
+    ],
+    "at": [
+     40,
+     49
+    ],
+    "attack": [
+     110,
+     49
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "c_sluice",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 600,
+  "frames": 100,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": "gate"
+  },
+  "offset": [
+   0,
+   60
+  ],
+  "tides": [
+   {
+    "tick": 600,
+    "seat": 0,
+    "tide": "north"
+   }
+  ]
+ },
+ {
+  "name": "c_tide",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 860,
+  "frames": 110,
+  "zoom": [
+   2.0,
+   2.25
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "cell": [
+     64,
+     52
+    ]
+   }
+  },
+  "tides": [
+   {
+    "tick": 600,
+    "seat": 0,
+    "tide": "north"
+   }
+  ]
+ },
+ {
+  "name": "c_cross",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 500,
+  "frames": 100,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "army": 0
+   }
+  },
+  "ease": 0.15,
+  "tides": [
+   {
+    "tick": 40,
+    "seat": 0,
+    "tide": "north"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ],
+     [
+      "Bulwark",
+      2
+     ]
+    ],
+    "at": [
+     40,
+     49
+    ],
+    "attack": [
+     110,
+     49
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "c_drown",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 700,
+  "frames": 140,
+  "zoom": [
+   2.4,
+   2.6
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "cell": [
+     62,
+     79
+    ]
+   }
+  },
+  "tides": [
+   {
+    "tick": 480,
+    "seat": 1,
+    "tide": "flood"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ]
+    ],
+    "at": [
+     46,
+     79
+    ],
+    "attack": [
+     92,
+     79
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "d_clash",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 520,
+  "frames": 330,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": "fight"
+  },
+  "ease": 0.08,
+  "tides": [
+   {
+    "tick": 40,
+    "seat": 0,
+    "tide": "north"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ],
+     [
+      "Bulwark",
+      2
+     ]
+    ],
+    "at": [
+     42,
+     49
+    ],
+    "attack": [
+     90,
+     49
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      10
+     ],
+     [
+      "Skipper",
+      4
+     ]
+    ],
+    "at": [
+     86,
+     49
+    ],
+    "attack": [
+     38,
+     49
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "d_union",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 560,
+  "frames": 120,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "army": 0
+   }
+  },
+  "ease": 0.1,
+  "offset": [
+   -160,
+   0
+  ],
+  "tides": [
+   {
+    "tick": 40,
+    "seat": 0,
+    "tide": "north"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ],
+     [
+      "Bulwark",
+      2
+     ]
+    ],
+    "at": [
+     42,
+     49
+    ],
+    "attack": [
+     90,
+     49
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      10
+     ],
+     [
+      "Skipper",
+      4
+     ]
+    ],
+    "at": [
+     86,
+     49
+    ],
+    "attack": [
+     38,
+     49
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "d_assembly",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 560,
+  "frames": 120,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "army": 1
+   }
+  },
+  "ease": 0.1,
+  "offset": [
+   160,
+   0
+  ],
+  "tides": [
+   {
+    "tick": 40,
+    "seat": 0,
+    "tide": "north"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ],
+     [
+      "Bulwark",
+      2
+     ]
+    ],
+    "at": [
+     42,
+     49
+    ],
+    "attack": [
+     90,
+     49
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      10
+     ],
+     [
+      "Skipper",
+      4
+     ]
+    ],
+    "at": [
+     86,
+     49
+    ],
+    "attack": [
+     38,
+     49
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "d_assault",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 360,
+  "frames": 330,
+  "zoom": [
+   2.6,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": "fight"
+  },
+  "ease": 0.08,
+  "buildings": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kind": "Works",
+    "at": [
+     18,
+     58
+    ]
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kind": "Drydock",
+    "at": [
+     18,
+     70
+    ]
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kind": "Tower",
+    "at": [
+     24,
+     64
+    ]
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      12
+     ],
+     [
+      "Skipper",
+      4
+     ]
+    ],
+    "at": [
+     36,
+     64
+    ],
+    "attack": [
+     12,
+     64
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Loom",
+      3
+     ]
+    ],
+    "at": [
+     33,
+     60
+    ],
+    "rank": 3,
+    "deploy": true
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      6
+     ]
+    ],
+    "at": [
+     20,
+     64
+    ],
+    "attack": [
+     34,
+     64
+    ],
+    "rank": 3
+   }
+  ]
+ },
+ {
+  "name": "d_loom",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 420,
+  "frames": 120,
+  "zoom": [
+   3.0,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "cell": [
+     31,
+     61
+    ]
+   }
+  },
+  "buildings": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kind": "Works",
+    "at": [
+     18,
+     58
+    ]
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kind": "Drydock",
+    "at": [
+     18,
+     70
+    ]
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kind": "Tower",
+    "at": [
+     24,
+     64
+    ]
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      12
+     ],
+     [
+      "Skipper",
+      4
+     ]
+    ],
+    "at": [
+     36,
+     64
+    ],
+    "attack": [
+     12,
+     64
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Loom",
+      3
+     ]
+    ],
+    "at": [
+     33,
+     60
+    ],
+    "rank": 3,
+    "deploy": true
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      6
+     ]
+    ],
+    "at": [
+     20,
+     64
+    ],
+    "attack": [
+     34,
+     64
+    ],
+    "rank": 3
+   }
+  ]
+ },
+ {
+  "name": "d_compact",
+  "seed": 3,
+  "factions": [
+   "union",
+   "compact"
+  ],
+  "ai": false,
+  "start": 420,
+  "frames": 240,
+  "zoom": [
+   2.7,
+   3.0
+  ],
+  "camera": {
+   "type": "pan",
+   "from": {
+    "cell": [
+     96,
+     62
+    ]
+   },
+   "to": {
+    "cell": [
+     100,
+     64
+    ]
+   }
+  },
+  "ease": 0.08,
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Brander",
+      10
+     ],
+     [
+      "Glinter",
+      4
+     ]
+    ],
+    "at": [
+     106,
+     64
+    ],
+    "attack": [
+     84,
+     64
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Heliostat",
+      3
+     ]
+    ],
+    "at": [
+     110,
+     60
+    ],
+    "rank": 3,
+    "deploy": true
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ]
+    ],
+    "at": [
+     88,
+     64
+    ],
+    "attack": [
+     112,
+     64
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "d_confluence",
+  "seed": 21,
+  "map": "confluence",
+  "factions": [
+   "union",
+   "assembly",
+   "compact"
+  ],
+  "ai": false,
+  "start": 450,
+  "frames": 300,
+  "zoom": [
+   1.8,
+   2.2
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "cell": [
+     82,
+     82
+    ]
+   }
+  },
+  "ease": 0.05,
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      10
+     ],
+     [
+      "Sounder",
+      4
+     ]
+    ],
+    "at": [
+     58,
+     58
+    ],
+    "attack": [
+     80,
+     80
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      10
+     ],
+     [
+      "Skipper",
+      4
+     ]
+    ],
+    "at": [
+     112,
+     76
+    ],
+    "attack": [
+     80,
+     80
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 2,
+    "kinds": [
+     [
+      "Brander",
+      10
+     ],
+     [
+      "Glinter",
+      4
+     ]
+    ],
+    "at": [
+     76,
+     112
+    ],
+    "attack": [
+     80,
+     80
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "e_hold",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 330,
+  "frames": 360,
+  "zoom": [
+   2.7,
+   3.0
+  ],
+  "camera": {
+   "type": "hold",
+   "at": {
+    "cell": [
+     74,
+     49
+    ]
+   }
+  },
+  "tides": [
+   {
+    "tick": 40,
+    "seat": 0,
+    "tide": "north"
+   }
+  ],
+  "armies": [
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Reedguard",
+      8
+     ]
+    ],
+    "at": [
+     80,
+     49
+    ],
+    "rank": 4
+   },
+   {
+    "tick": 300,
+    "seat": 1,
+    "kinds": [
+     [
+      "Loom",
+      2
+     ]
+    ],
+    "at": [
+     84,
+     52
+    ],
+    "rank": 2,
+    "deploy": true
+   },
+   {
+    "tick": 300,
+    "seat": 0,
+    "kinds": [
+     [
+      "Riveter",
+      12
+     ],
+     [
+      "Sounder",
+      4
+     ]
+    ],
+    "at": [
+     30,
+     49
+    ],
+    "attack": [
+     92,
+     49
+    ],
+    "rank": 4
+   }
+  ]
+ },
+ {
+  "name": "f_evening",
+  "seed": 3,
+  "factions": [
+   "union",
+   "assembly"
+  ],
+  "ai": false,
+  "start": 28200,
+  "frames": 420,
+  "zoom": [
+   2.0,
+   2.2
+  ],
+  "camera": {
+   "type": "pan",
+   "from": {
+    "cell": [
+     44,
+     56
+    ]
+   },
+   "to": {
+    "cell": [
+     80,
+     68
+    ]
+   }
+  }
+ }
+]

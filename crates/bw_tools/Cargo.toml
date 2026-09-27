@@ -1,0 +1,14 @@
+[package]
+name = "bw_tools"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+bw_core = { path = "../bw_core" }
+bw_content = { path = "../bw_content" }
+bw_sim = { path = "../bw_sim" }
+serde_json.workspace = true

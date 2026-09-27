@@ -1,0 +1,28 @@
+[workspace]
+members = ["crates/bw_core", "crates/bw_content", "crates/bw_sim", "crates/bw_desktop", "crates/bw_tools", "crates/bw_launcher"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/halfprice06/brinewake"
+rust-version = "1.90"
+publish = false
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+blake3 = "1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+thiserror = "2"
+winit = "0.30"
+wgpu = "30"
+pollster = "0.4"
+bytemuck = { version = "1", features = ["derive"] }
+
+[profile.release]
+debug = 1
+
+[profile.dev.package."*"]
+opt-level = 2

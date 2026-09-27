@@ -1,0 +1,80 @@
+# The Windows download (tools/package_windows.sh), built on Linux the way it
+# is shipped, then played on a real Windows machine: two copies of the game
+# meet online through the menus and must agree tick for tick, and one opens
+# its window for a few seconds. Runs by hand (Actions, Windows build, Run
+# workflow) and on pull requests that touch the build or the network code.
+# The game-only zip is the BRINEWAKE-windows artifact of a run; the release
+# download with the launcher is built by release-windows.yml and
+# tools/release.sh.
+name: Windows build
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/windows.yml"
+      - "tools/package_windows.sh"
+      - "tools/package/**"
+      - "tools/net_test/**"
+      - "crates/bw_desktop/build.rs"
+      - "crates/bw_desktop/windows/**"
+      - "crates/bw_desktop/Cargo.toml"
+      - "crates/bw_desktop/src/net/**"
+      - "Cargo.lock"
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: MinGW and the Windows target
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends gcc-mingw-w64-x86-64-win32 zip
+          rustup target add x86_64-pc-windows-gnu
+      - uses: Swatinem/rust-cache@v2
+      - run: tools/package_windows.sh
+      # The Windows job gets the build through the cache, which does not
+      # count against the account's artifact storage.
+      - uses: actions/cache/save@v4
+        with:
+          path: dist/BRINEWAKE-windows
+          key: brinewake-windows-${{ github.run_id }}-${{ github.run_attempt }}
+          enableCrossOsArchive: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BRINEWAKE-windows
+          path: dist/BRINEWAKE-windows/
+
+  play-on-windows:
+    needs: package
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache/restore@v4
+        with:
+          path: dist/BRINEWAKE-windows
+          key: brinewake-windows-${{ github.run_id }}-${{ github.run_attempt }}
+          enableCrossOsArchive: true
+          fail-on-cache-miss: true
+      - name: Two seats online, with late and lost packets
+        shell: bash
+        run: python tools/net_test/two_seats.py --bin dist/BRINEWAKE-windows/BRINEWAKE.exe --seconds 40 --out net-test
+      - name: The window opens and draws
+        shell: pwsh
+        run: |
+          $game = Start-Process -PassThru dist\BRINEWAKE-windows\BRINEWAKE.exe `
+            -ArgumentList '--smoke-seconds','8','--capture',"$PWD\window.png",'--size','1280x720'
+          # A game that cannot start waits on its error box: never for long.
+          if (-not $game.WaitForExit(120000)) { Stop-Process $game; throw "still open after 2 minutes" }
+          if ($game.ExitCode -ne 0) { throw "exit code $($game.ExitCode)" }
+          if (-not (Test-Path window.png)) { throw "no picture" }
+      - if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-play-evidence
+          path: |
+            net-test/
+            window.png

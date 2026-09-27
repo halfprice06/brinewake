@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BRINEWAKE third-party licenses</title>
+<style>
+body { font: 15px/1.5 system-ui, sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; color: #1c2d36; }
+pre { white-space: pre-wrap; background: #f4f1e8; padding: 1em; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>Third-party licenses</h1>
+<p>BRINEWAKE is MIT licensed (see LICENSE). It is built with the Rust crates
+below; each links to its source (the MPL-2.0 crates' source is there too).</p>
+<ul>
+{{#each overview}}<li><a href="#{{id}}">{{name}}</a> ({{count}})</li>
+{{/each}}
+</ul>
+{{#each licenses}}
+<h2 id="{{id}}">{{name}}</h2>
+<p>Used by:</p>
+<ul>
+{{#each used_by}}<li><a href="https://crates.io/crates/{{crate.name}}/{{crate.version}}">{{crate.name}} {{crate.version}}</a></li>
+{{/each}}
+</ul>
+<pre>{{text}}</pre>
+{{/each}}
+</body>
+</html>

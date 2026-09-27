@@ -1,0 +1,74 @@
+BRINEWAKE
+=========
+
+Starting the game
+-----------------
+1. Unzip this folder anywhere (Desktop or Downloads is fine). Keep the
+   "game" folder next to BRINEWAKE.exe.
+2. Double-click BRINEWAKE.exe. It checks danprice.ai/brinewake for a newer
+   version, installs it if there is one, and starts the game. Without an
+   internet connection it starts the version you already have.
+3. Windows may say "Windows protected your PC". The game is not signed by
+   a publisher, so click "More info", then "Run anyway". This happens once.
+4. The first time you host or join, Windows Firewall asks whether
+   BRINEWAKE may use the network. Tick both boxes (Private and Public) and
+   click "Allow access". If you clicked Cancel by mistake, see "Trouble"
+   below.
+
+Your name, settings and saves are kept in %APPDATA%\Brinewake. The game
+itself is installed in %LOCALAPPDATA%\Brinewake\game and kept up to date
+by BRINEWAKE.exe.
+
+
+Playing together over the internet
+----------------------------------
+No server and no account. One player hosts, everyone else joins.
+
+The host:
+  1. Main menu, PLAY ONLINE, HOST.
+  2. A join code appears (it starts with BW-). Press COPY and paste it to
+     your friends in any chat (Discord, text, email).
+  3. CHANGE picks the map. The Confluence holds three players; the other
+     maps hold two, and anyone extra watches the match.
+  4. Pick a side. START lights up when everyone is READY.
+
+Everyone else:
+  1. Main menu, PLAY ONLINE.
+  2. Copy the host's code, then press PASTE, then JOIN.
+  3. Pick a side and press READY.
+
+Everyone must run the same version of the game. If the lobby says "a
+different build", the player with the older one closes the game and starts
+BRINEWAKE.exe again, which updates it.
+
+
+Trouble
+-------
+"REACHING THE HOST" never finishes:
+  After a few seconds your screen shows a reply code under
+  "NO ANSWER YET. SEND THIS BACK". COPY it and send it to the host.
+  The host presses FRIEND CAN'T CONNECT?, pastes it with Ctrl+V and
+  presses ADD.
+  Both games then reach towards each other, which gets through most home
+  routers.
+
+Still stuck? Any one of these fixes it:
+  - The host checks Windows Firewall: Start, type "Allow an app through
+    Windows Firewall", Change settings, find BRINEWAKE and tick Private and
+    Public. (If it is missing: Allow another app, Browse, and pick
+    %LOCALAPPDATA%\Brinewake\game\current\brinewake.exe.)
+  - The host's screen says ROUTER CLOSED: the host forwards UDP port 47800
+    on their home router to their PC, then everyone joins again.
+  - Everyone installs Tailscale (free, tailscale.com) and joins the same
+    tailnet. Guests then type the host's Tailscale address (100.x.x.x)
+    instead of a code and press JOIN.
+
+Phone hotspots and some mobile or dorm networks block direct connections;
+Tailscale gets through those.
+
+If a player's game closes mid-match, they start it again, PLAY ONLINE,
+REJOIN. The host can press KEEP SEAT OPEN so the others play on meanwhile.
+
+If the game will not start at all, it shows a box saying why. It needs a
+graphics card with DirectX 12 or Vulkan (almost any PC from the last ten
+years); updating the graphics driver usually helps.
