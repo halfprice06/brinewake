@@ -672,9 +672,14 @@ fn project_root() -> PathBuf {
             return resources;
         }
     }
-    let compiled = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../..");
-    if compiled.join("art").exists() {
-        return compiled;
+    // Debug builds also look in the source tree they were built from; a
+    // release build carries no local path and finds its art beside itself.
+    #[cfg(debug_assertions)]
+    {
+        let compiled = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../..");
+        if compiled.join("art").exists() {
+            return compiled;
+        }
     }
     if let Ok(exe) = std::env::current_exe() {
         for p in exe.ancestors() {

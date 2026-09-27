@@ -7,8 +7,9 @@
 #
 # VERSION must match [workspace.package] version in Cargo.toml. NOTES_FILE
 # has one release note per line. Needs:
-#   - a Developer ID Application certificate in the keychain (the first one
-#     found, or BRINEWAKE_MAC_IDENTITY);
+#   - a Developer ID Application certificate in the login keychain (the
+#     first one found, or BRINEWAKE_MAC_IDENTITY; another keychain with
+#     BRINEWAKE_KEYCHAIN);
 #   - notarytool credentials stored as "brinewake-notary"
 #     (xcrun notarytool store-credentials brinewake-notary);
 #   - the signing key at ~/.config/brinewake/release-signing.key;
@@ -86,7 +87,11 @@ plist() { # plist NAME EXECUTABLE IDENTIFIER
 PLIST
 }
 
-sign() { codesign --force --options runtime --timestamp --sign "$identity" "$@"; }
+# The keychain that holds the identity (the login keychain unless
+# BRINEWAKE_KEYCHAIN says otherwise), so another keychain earlier in the
+# search list is never asked.
+keychain=${BRINEWAKE_KEYCHAIN:-$HOME/Library/Keychains/login.keychain-db}
+sign() { codesign --force --options runtime --timestamp --keychain "$keychain" --sign "$identity" "$@"; }
 
 echo "== macOS"
 cargo build --release -p bw_desktop --bin brinewake -p bw_launcher --bin brinewake-launcher --bin brinewake-release
