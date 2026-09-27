@@ -1,8 +1,9 @@
-# The Windows release binaries, built from a tag by CI so that they can be
-# code-signed (SignPath Foundation signs only binaries built by CI from this
-# public repository): the launcher, BRINEWAKE.exe, and the game,
-# brinewake.exe. tools/release.sh packs them with the Mac build and signs the
-# update manifest on the maintainer's machine; the ed25519 release key never
+# The Windows release binaries, the launcher (BRINEWAKE.exe) and the game
+# (brinewake.exe), built from a tag by CI, ready for code signing later:
+# signing services for open source projects, such as SignPath Foundation,
+# sign only binaries built by CI from the public repository. Until then
+# tools/release.sh cross-builds the Windows download on the maintainer's
+# machine and signs the update manifest there; the ed25519 release key never
 # enters CI.
 name: Windows release build
 
@@ -37,7 +38,9 @@ jobs:
         with:
           name: windows-unsigned
           path: windows-unsigned/
-      # Once SignPath Foundation has accepted the project, sign the artifact:
+      # Not signed yet. If SignPath Foundation (free for open source projects
+      # with an established following) accepts the project later, sign the
+      # artifact here:
       # - uses: signpath/github-action-submit-signing-request@v1
       #   with:
       #     api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
